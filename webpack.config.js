@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -14,13 +15,18 @@ module.exports = {
       directory: path.join(__dirname, 'dist'), // The directory to serve static files from
     },
     compress: true, // Enable gzip compression
-    port: 8080, // The port on which to run the server
+    port: 4000, // The port on which to run the server
     open: true, // Automatically open the browser
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './vendor/index.html', // Path to your index.html file
       filename: 'index.html', // The onutput file name
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'assets', to: 'assets' },
+      ],
     }),
   ],
 };

@@ -53,6 +53,8 @@ class World {
     scene.add(sphere, light);
     const lightHelper = new THREE.PointLightHelper(light);
     scene.add(lightHelper);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
 
     const resizer = new Resizer(container, camera, renderer);
   }
@@ -73,3 +75,4 @@ class World {
 
 export { World };
 export { createImageAtPoint };
+export { scene };

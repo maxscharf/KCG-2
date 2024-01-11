@@ -7,7 +7,7 @@ function createMaterial() {
 
   // load a texture
   const texture = textureLoader.load(
-    './assets/textures/earth-texture.png',
+    'assets/textures/earth-texture.png', 
   );
 
   // create a "standard" material using
